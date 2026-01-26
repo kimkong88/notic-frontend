@@ -6,6 +6,10 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Privacy Policy - Floatify',
   description: 'Floatify Privacy Policy',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPolicy() {

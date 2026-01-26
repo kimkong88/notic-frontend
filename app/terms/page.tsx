@@ -6,6 +6,10 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Terms of Service - Floatify',
   description: 'Floatify Terms of Service',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function TermsOfService() {
