@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Check, ShieldCheck } from 'lucide-react';
+import { track } from '@vercel/analytics';
 
 const CHROME_STORE_URL = "https://chrome.google.com/webstore";
 const EXTPAY_CHECKOUT_URL = "https://extensionpay.com/extension/floatify/choose-plan?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5";
@@ -13,6 +14,19 @@ export default function PricingSection() {
   const monthlyPrice = 1.99;
   const yearlyPrice = 12.99;
   const yearlySavings = 45; // 45% off
+
+  const handleFreeInstall = () => {
+    track('free_install');
+    window.location.href = CHROME_STORE_URL;
+  }
+  const handleTrialInstall = () => {
+    track('trial_install');
+    window.location.href = EXTPAY_TRIAL_URL;
+  }
+  const handlePremiumInstall = () => {
+    track('premium_install');
+    window.location.href = EXTPAY_CHECKOUT_URL;
+  }
 
   return (
     <section id="pricing" className="py-16 sm:py-24 md:py-32 bg-white/[0.01]">
@@ -81,12 +95,12 @@ export default function PricingSection() {
               </li>
             </ul>
             <div className="mt-auto mb-3 sm:mb-4">
-              <a 
-                href={CHROME_STORE_URL} 
+              <button 
                 className="block w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-center text-sm sm:text-base font-bold hover:bg-white/10 transition-all"
+                onClick={handleFreeInstall}
               >
                 Install Free
-              </a>
+              </button>
             </div>
             <div className="h-[18px] sm:h-[20px]"></div>
           </div>
@@ -155,18 +169,18 @@ export default function PricingSection() {
             </ul>
             <div className="mt-auto">
               <div className="space-y-3 mb-3 sm:mb-4">
-                <a 
-                  href={EXTPAY_TRIAL_URL} 
+                <button 
                   className="block w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-center text-sm sm:text-base font-bold hover:bg-white/10 transition-all"
-                >
+                onClick={handleTrialInstall}
+               >
                   Start 7-Day Free Trial
-                </a>
-                <a 
-                  href={EXTPAY_CHECKOUT_URL} 
+                </button>
+                <button 
+                  onClick={handlePremiumInstall}
                   className="block bg-[#E63946] w-full py-4 sm:py-5 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base font-bold shadow-lg shadow-[#E63946]/20 transition-all hover:brightness-110 hover:translate-y-[-2px]"
                 >
                   Unlock Premium Now
-                </a>
+                </button>
               </div>
             </div>
             <p className="text-center text-[9px] sm:text-[10px] text-gray-500 flex items-center justify-center gap-1">
