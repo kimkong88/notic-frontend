@@ -23,13 +23,13 @@ export default function TermsOfService() {
           </Link>
           
           <h1 className="text-4xl sm:text-5xl font-bold mb-8 tracking-tighter">Terms of Service</h1>
-          <p className="text-gray-400 mb-12">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p className="text-gray-400 mb-12">Last updated: January 26, 2026</p>
 
           <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
               <p>
-                By accessing or using Floatify ("Service"), you agree to be bound by these Terms of Service ("Terms"). 
+                By accessing or using Floatify (&quot;Service&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). 
                 If you disagree with any part of these terms, you may not access the Service.
               </p>
             </section>
@@ -105,7 +105,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">9. Disclaimer of Warranties</h2>
               <p>
-                The Service is provided "as is" and "as available" without warranties of any kind, either express or implied. 
+                The Service is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind, either express or implied. 
                 We do not guarantee that the Service will be uninterrupted, error-free, or free from viruses or other harmful components.
               </p>
             </section>
@@ -140,7 +140,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-bold text-white mb-4">13. Changes to Terms</h2>
               <p>
                 We reserve the right to modify these Terms at any time. We will notify users of material changes by posting 
-                the updated Terms on this page and updating the "Last updated" date. Your continued use of the Service after 
+                the updated Terms on this page and updating the &quot;Last updated&quot; date. Your continued use of the Service after 
                 changes become effective constitutes acceptance of the new Terms.
               </p>
             </section>

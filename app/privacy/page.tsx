@@ -23,13 +23,13 @@ export default function PrivacyPolicy() {
           </Link>
           
           <h1 className="text-4xl sm:text-5xl font-bold mb-8 tracking-tighter">Privacy Policy</h1>
-          <p className="text-gray-400 mb-12">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p className="text-gray-400 mb-12">Last updated: January 26, 2026</p>
 
           <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
               <p>
-                Floatify ("we," "our," or "us") operates the Floatify Chrome extension and related services. 
+                Floatify (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates the Floatify Chrome extension and related services. 
                 This Privacy Policy explains how we collect, use, and protect your information when you use our service.
               </p>
             </section>
@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>ExtensionPay/Stripe:</strong> Processes payments and manages subscriptions. Their privacy policy applies to payment data: <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E63946] hover:underline">stripe.com/privacy</a></li>
                 <li><strong>Vercel Analytics:</strong> Provides website analytics. Their privacy policy: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#E63946] hover:underline">vercel.com/legal/privacy-policy</a></li>
-                <li><strong>Chrome Web Store:</strong> Handles extension distribution. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E63946] hover:underline">policies.google.com/privacy</a></li>
+                <li><strong>Chrome Web Store:</strong> Handles extension distribution. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E63946] hover:underline">policies.google.com/privacy</a></li>
                 <li><strong>YouTube/Google:</strong> Our extension interacts with YouTube, but we do not collect or store any YouTube data.</li>
               </ul>
             </section>
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4">8. Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">8. Children&apos;s Privacy</h2>
               <p>
                 Our service is not intended for children under 13. We do not knowingly collect information from children under 13.
               </p>
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">9. Changes to This Policy</h2>
               <p>
-                We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Last updated" date.
+                We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the &quot;Last updated&quot; date.
               </p>
             </section>
 

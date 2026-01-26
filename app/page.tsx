@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   Chrome, 
-  Search, 
   Home, 
   Zap,
   ShieldCheck,
