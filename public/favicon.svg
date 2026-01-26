@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners (rounded-xl = 12px on 40px, scaled to 32px = ~9.6px, use 10px) -->
+  <rect width="32" height="32" rx="10" fill="#E63946"/>
+  <!-- Play icon centered and scaled -->
+  <g transform="translate(6, 6)">
+    <rect x="2.4" y="4" width="14.4" height="11.2" rx="2.4" stroke="white" stroke-width="2" fill="none"/>
+    <path d="M8 7.2L12 10L8 12.8V7.2Z" fill="white"/>
+  </g>
+</svg>
