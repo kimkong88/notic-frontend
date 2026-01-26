@@ -110,6 +110,35 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Why Floatify Section */}
+      <section className="py-16 sm:py-24 md:py-32 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 tracking-tighter">Why Floatify?</h2>
+          </div>
+          
+          <div className="space-y-8 sm:space-y-10 text-gray-300">
+            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[28px]">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+                Finding your YouTube tab among dozens of open tabs is frustrating. When you finally find it, you get distracted and end up spending <span className="text-[#E63946] font-semibold">hours watching videos</span> instead of working.
+              </p>
+            </div>
+
+            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[28px]">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+                Existing floating players solve the technical problem—they float. But they don&apos;t solve the <span className="text-[#E63946] font-semibold">real problem</span>: actually using YouTube without losing focus.
+              </p>
+            </div>
+
+            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[28px] border-[#E63946]/20">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center font-semibold">
+                That&apos;s why we built Floatify with <span className="text-[#E63946]">interactive browsing</span> and <span className="text-[#E63946]">privacy features</span>. So you can discover your next video without ever leaving your workflow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <PricingSection />
 
       <Footer />

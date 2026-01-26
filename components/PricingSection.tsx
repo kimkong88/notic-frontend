@@ -8,7 +8,7 @@ const EXTPAY_CHECKOUT_URL = "https://extensionpay.com/extension/floatify/choose-
 const EXTPAY_TRIAL_URL = "https://extensionpay.com/extension/floatify/trial?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5";
 
 export default function PricingSection() {
-  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('yearly');
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
 
   const monthlyPrice = 1.99;
   const yearlyPrice = 12.99;
