@@ -27,7 +27,7 @@ async function loadGoogleFont(font: string, weight: number) {
         return await response.arrayBuffer();
       }
     }
-  } catch (error) {
+  } catch {
     // Silently fail and use fallback font
   }
   return null;
@@ -40,13 +40,18 @@ export default async function Image() {
     loadGoogleFont('Plus Jakarta Sans', 700),
   ]);
 
-  const fonts = [];
+  const fonts: Array<{
+    name: string;
+    data: ArrayBuffer;
+    style: 'normal';
+    weight: 600 | 700;
+  }> = [];
   if (font600) {
     fonts.push({
       name: 'Plus Jakarta Sans',
       data: font600,
       style: 'normal' as const,
-      weight: 600,
+      weight: 600 as const,
     });
   }
   if (font700) {
@@ -54,7 +59,7 @@ export default async function Image() {
       name: 'Plus Jakarta Sans',
       data: font700,
       style: 'normal' as const,
-      weight: 700,
+      weight: 700 as const,
     });
   }
 
@@ -133,7 +138,7 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: fonts,
+      fonts: fonts as any,
     }
   );
 }
