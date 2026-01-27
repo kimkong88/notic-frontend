@@ -16,8 +16,9 @@ export default function Page() {
     <div className="min-h-screen bg-[#0B0B0C] text-white selection:bg-[#E63946]/30">
       <Header />
 
-      {/* Hero Section */}
-      <header className="pt-24 sm:pt-32 md:pt-48 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 relative overflow-hidden">
+      <main>
+        {/* Hero Section */}
+        <header className="pt-24 sm:pt-32 md:pt-48 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 relative overflow-hidden">
         {/* Abstract Background Glows */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-[800px] md:w-[1000px] h-[400px] sm:h-[500px] md:h-[600px] bg-[#E63946]/10 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -72,6 +73,7 @@ export default function Page() {
       {/* Value Prop: The 4 Pillars */}
       <section id="features" className="py-16 sm:py-24 md:py-32 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 text-center tracking-tighter">Features</h2>
           <div className="grid sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
             <div className="md:max-w-md">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E63946]/10 flex items-center justify-center mb-4 sm:mb-6">
@@ -134,7 +136,8 @@ export default function Page() {
         </div>
       </section>
 
-      <PricingSection />
+        <PricingSection />
+      </main>
 
       <Footer />
     </div>
