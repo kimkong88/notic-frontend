@@ -77,12 +77,12 @@ export default function Page() {
       {/* Value Prop: The 4 Pillars */}
       <section id="features" className="py-16 sm:py-24 md:py-32 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
+          <div className="grid sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
             <div>
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E63946]/10 flex items-center justify-center mb-4 sm:mb-6">
                 <Zap className="text-[#E63946] w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Zero-Tab Workflow</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Work Without Interruption</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">Search and discover your next video without leaving your document or code editor. No tab switching required.</p>
             </div>
             <div>
@@ -111,27 +111,27 @@ export default function Page() {
       </section>
 
       {/* Why Floatify Section */}
-      <section className="py-16 sm:py-24 md:py-32 border-t border-white/5">
+      <section className="py-12 sm:py-16 md:py-20 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 tracking-tighter">Why Floatify?</h2>
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 tracking-tighter">Why Floatify?</h2>
           </div>
           
-          <div className="space-y-8 sm:space-y-10 text-gray-300">
-            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[28px]">
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+          <div className="space-y-6 sm:space-y-7 text-gray-300">
+            <div className="glass-card p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-[28px]">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center">
                 Finding your YouTube tab among dozens of open tabs is frustrating. When you finally find it, you get distracted and end up spending <span className="text-[#E63946] font-semibold">hours watching videos</span> instead of working.
               </p>
             </div>
 
-            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[28px]">
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+            <div className="glass-card p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-[28px]">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center">
                 Existing floating players solve the technical problem—they float. But they don&apos;t solve the <span className="text-[#E63946] font-semibold">real problem</span>: actually using YouTube without losing focus.
               </p>
             </div>
 
-            <div className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-[28px] border-[#E63946]/20">
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center font-semibold">
+            <div className="glass-card p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-[28px] border-[#E63946]/20">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center font-semibold">
                 That&apos;s why we built Floatify with <span className="text-[#E63946]">interactive browsing</span> and <span className="text-[#E63946]">privacy features</span>. So you can discover your next video without ever leaving your workflow.
               </p>
             </div>
