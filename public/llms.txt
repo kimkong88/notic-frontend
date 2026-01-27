@@ -1,0 +1,27 @@
+# llms.txt - Information for AI/LLM crawlers
+# Learn more: https://llmstxt.org/
+
+# Site Information
+Name: Floatify
+Description: Floating YouTube Player - Search, Browse Feed, and Multitask without switching tabs. YouTube Mini Player, Evolved.
+URL: https://floatify.app
+
+# Contact
+Contact: support@floatify.app
+
+# Product Information
+Product: Floatify - Chrome Extension
+Category: Browser Extension, Video Player, Productivity Tool
+Platform: Chrome Browser
+Features: 
+  - Floating YouTube Player
+  - Video Search & Discovery
+  - Interactive YouTube Feed
+  - Privacy Mode
+  - Keyboard-First Controls
+
+# Allowed Crawlers
+Crawlers: GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, CCBot
+
+# Sitemap
+Sitemap: https://floatify.app/sitemap.xml
