@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  Chrome, 
   Home, 
   Zap,
   ShieldCheck,
@@ -9,8 +8,7 @@ import {
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PricingSection from '@/components/PricingSection';
-
-const CHROME_STORE_URL = "https://chrome.google.com/webstore";
+import HeroCTA from '@/components/HeroCTA';
 
 export default function Page() {
   return (
@@ -33,13 +31,7 @@ export default function Page() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 md:mb-24">
-            <a 
-              href={CHROME_STORE_URL} 
-              className="bg-[#E63946] px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 transition-all hover:brightness-110 hover:translate-y-[-2px] hover:shadow-[0_12px_24px_rgba(230,57,70,0.3)]"
-            >
-              <Chrome size={20} className="sm:w-6 sm:h-6 w-5 h-5" />
-              <span className="whitespace-nowrap">Add to Chrome — Free</span>
-            </a>
+            <HeroCTA />
             <a 
               href="#features" 
               className="bg-white/5 border border-white/10 hover:bg-white/10 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-bold transition-all"

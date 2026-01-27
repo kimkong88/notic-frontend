@@ -3,34 +3,33 @@
 import React, { useState } from 'react';
 import { Check, ShieldCheck } from 'lucide-react';
 import { track } from '@vercel/analytics';
-
-const CHROME_STORE_URL = "https://chrome.google.com/webstore";
-const EXTPAY_CHECKOUT_URL = "https://extensionpay.com/extension/floatify/choose-plan?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5";
-const EXTPAY_TRIAL_URL = "https://extensionpay.com/extension/floatify/trial?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5";
+import ReviewModal from './ReviewModal';
 
 export default function PricingSection() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const monthlyPrice = 1.99;
   const yearlyPrice = 12.99;
   const yearlySavings = 45; // 45% off
 
   const handleFreeInstall = () => {
-    track('free_install');
-    window.location.href = CHROME_STORE_URL;
+    track('install');
+    setIsModalOpen(true);
   }
   const handleTrialInstall = () => {
     track('trial_install');
-    window.location.href = EXTPAY_TRIAL_URL;
+    setIsModalOpen(true);
   }
   const handlePremiumInstall = () => {
     track('premium_install');
-    window.location.href = EXTPAY_CHECKOUT_URL;
+    setIsModalOpen(true);
   }
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 md:py-32 bg-white/[0.01]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <>
+      <section id="pricing" className="py-16 sm:py-24 md:py-32 bg-white/[0.01]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tighter">Simple Pricing</h2>
           <p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">Choose the plan that fits your multitasking needs.</p>
@@ -96,7 +95,7 @@ export default function PricingSection() {
             </ul>
             <div className="mt-auto mb-3 sm:mb-4">
               <button 
-                className="block w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-center text-sm sm:text-base font-bold hover:bg-white/10 transition-all"
+                className="block w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-center text-sm sm:text-base font-bold hover:bg-white/10 transition-all cursor-pointer"
                 onClick={handleFreeInstall}
               >
                 Install Free
@@ -170,14 +169,14 @@ export default function PricingSection() {
             <div className="mt-auto">
               <div className="space-y-3 mb-3 sm:mb-4">
                 <button 
-                  className="block w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-center text-sm sm:text-base font-bold hover:bg-white/10 transition-all"
+                  className="block w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 text-center text-sm sm:text-base font-bold hover:bg-white/10 transition-all cursor-pointer"
                 onClick={handleTrialInstall}
                >
                   Start 7-Day Free Trial
                 </button>
                 <button 
                   onClick={handlePremiumInstall}
-                  className="block bg-[#E63946] w-full py-4 sm:py-5 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base font-bold shadow-lg shadow-[#E63946]/20 transition-all hover:brightness-110 hover:translate-y-[-2px]"
+                  className="block bg-[#E63946] w-full py-4 sm:py-5 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base font-bold shadow-lg shadow-[#E63946]/20 transition-all hover:brightness-110 hover:translate-y-[-2px] cursor-pointer"
                 >
                   Unlock Premium Now
                 </button>
@@ -190,5 +189,7 @@ export default function PricingSection() {
         </div>
       </div>
     </section>
+    <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }
