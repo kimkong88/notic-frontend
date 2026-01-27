@@ -78,28 +78,28 @@ export default function Page() {
       <section id="features" className="py-16 sm:py-24 md:py-32 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
-            <div>
+            <div className="md:max-w-md">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E63946]/10 flex items-center justify-center mb-4 sm:mb-6">
                 <Zap className="text-[#E63946] w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Work Without Interruption</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">Search and discover your next video without leaving your document or code editor. No tab switching required.</p>
             </div>
-            <div>
+            <div className="md:max-w-md">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E63946]/10 flex items-center justify-center mb-4 sm:mb-6">
                 <Home className="text-[#E63946] w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Your Feed, Anywhere</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">Your personalized YouTube recommendations in a tiny, movable window. Browse and discover videos without opening YouTube.</p>
             </div>
-            <div>
+            <div className="md:max-w-md">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E63946]/10 flex items-center justify-center mb-4 sm:mb-6">
                 <ShieldCheck className="text-[#E63946] w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Stealth by Design</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">Built for the office and library. Privacy Mode blends the player into your background with adjustable opacity and blur.</p>
             </div>
-            <div>
+            <div className="md:max-w-md">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#E63946]/10 flex items-center justify-center mb-4 sm:mb-6">
                 <Keyboard className="text-[#E63946] w-5 h-5 sm:w-6 sm:h-6" />
               </div>
