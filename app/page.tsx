@@ -9,6 +9,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PricingSection from '@/components/PricingSection';
 import HeroCTA from '@/components/HeroCTA';
+import ReviewBanner from '@/components/ReviewBanner';
 
 export default function Page() {
   return (
@@ -20,7 +21,9 @@ export default function Page() {
         {/* Abstract Background Glows */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full sm:w-[800px] md:w-[1000px] h-[400px] sm:h-[500px] md:h-[600px] bg-[#E63946]/10 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto text-center relative z-10">          
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <ReviewBanner />
+          
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 tracking-tighter">
             YouTube Mini Player, <br />
             <span className="gradient-text">Evolved</span>.
