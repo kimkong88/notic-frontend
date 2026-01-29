@@ -4,8 +4,6 @@ import React from 'react';
 import Logo from '../Logo';
 import Link from 'next/link';
 
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/floatify-floating-player/mhmhiofcilefnelpkeceheilccmgjgoh';
-
 export default function Header() {
   return (
     <nav className="fixed w-full z-50 top-0 left-0 bg-black/40 backdrop-blur-xl border-b border-white/5">
@@ -18,9 +16,9 @@ export default function Header() {
         <div className="hidden md:flex gap-6 lg:gap-8 text-sm font-medium text-gray-400">
           <a href="#features" className="hover:text-[#E63946] transition-colors">Features</a>
           <a href="#pricing" className="hover:text-[#E63946] transition-colors">Pricing</a>
-          <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[#E63946] transition-colors">
+          <Link href="/download" className="hover:text-[#E63946] transition-colors">
             Install
-          </a>
+          </Link>
         </div>
 
         <Link

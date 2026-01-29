@@ -4,8 +4,6 @@ import React from 'react';
 import { Chrome } from 'lucide-react';
 import { track } from '@vercel/analytics';
 
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/floatify-floating-player/mhmhiofcilefnelpkeceheilccmgjgoh';
-
 export default function HeroCTA() {
   const handleInstall = () => {
     track('install');
@@ -13,9 +11,7 @@ export default function HeroCTA() {
 
   return (
     <a
-      href={CHROME_STORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="/download"
       onClick={handleInstall}
       className="bg-[#E63946] px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 transition-all hover:brightness-110 hover:translate-y-[-2px] hover:shadow-[0_12px_24px_rgba(230,57,70,0.3)] cursor-pointer"
     >

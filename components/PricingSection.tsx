@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Check, ShieldCheck } from 'lucide-react';
 import { track } from '@vercel/analytics';
 
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/floatify-floating-player/mhmhiofcilefnelpkeceheilccmgjgoh';
 const EXTPAY_CHECKOUT_URL = 'https://extensionpay.com/extension/floatify/choose-plan?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5';
 const EXTPAY_TRIAL_URL = 'https://extensionpay.com/extension/floatify/trial?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5';
 
@@ -17,7 +16,7 @@ export default function PricingSection() {
 
   const handleFreeInstall = () => {
     track('install');
-    window.location.href = CHROME_STORE_URL;
+    window.location.href = '/download';
   };
   const handleTrialInstall = () => {
     track('trial_install');
