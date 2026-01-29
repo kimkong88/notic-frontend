@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import { Check, ShieldCheck } from 'lucide-react';
 import { track } from '@vercel/analytics';
-import ReviewModal from './ReviewModal';
+
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/floatify-floating-player/mhmhiofcilefnelpkeceheilccmgjgoh';
+const EXTPAY_CHECKOUT_URL = 'https://extensionpay.com/extension/floatify/choose-plan?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5';
+const EXTPAY_TRIAL_URL = 'https://extensionpay.com/extension/floatify/trial?api_key=608438ef-ebe6-46ef-bbd7-992372e2b2f5';
 
 export default function PricingSection() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const monthlyPrice = 1.99;
   const yearlyPrice = 12.99;
@@ -15,20 +17,19 @@ export default function PricingSection() {
 
   const handleFreeInstall = () => {
     track('install');
-    setIsModalOpen(true);
-  }
+    window.location.href = CHROME_STORE_URL;
+  };
   const handleTrialInstall = () => {
     track('trial_install');
-    setIsModalOpen(true);
-  }
+    window.location.href = EXTPAY_TRIAL_URL;
+  };
   const handlePremiumInstall = () => {
     track('premium_install');
-    setIsModalOpen(true);
-  }
+    window.location.href = EXTPAY_CHECKOUT_URL;
+  };
 
   return (
-    <>
-      <section id="pricing" className="py-16 sm:py-24 md:py-32 bg-white/[0.01]">
+    <section id="pricing" className="py-16 sm:py-24 md:py-32 bg-white/[0.01]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tighter">Simple Pricing</h2>
@@ -189,7 +190,5 @@ export default function PricingSection() {
         </div>
       </div>
     </section>
-    <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </>
   );
 }
