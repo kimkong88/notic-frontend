@@ -8,7 +8,7 @@ import BillingAuthScreen from "@/components/billing/BillingAuthScreen";
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://api.notelight.app";
 
-type AuthMode = "token" | "jwt" | null;
+type AuthMode = "token" | "jwt" | "none" | null;
 
 export default function BillingPage() {
   const [authMode, setAuthMode] = useState<AuthMode>(null);
