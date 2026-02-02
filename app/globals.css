@@ -178,6 +178,33 @@ body {
   color: var(--accent-hover);
 }
 
+.publication .publication-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25em 0;
+  font-size: 0.9375rem;
+}
+
+.publication .publication-prose thead {
+  border-bottom: 2px solid var(--border-primary);
+}
+
+.publication .publication-prose th {
+  text-align: left;
+  padding: 0.5em 0.75em;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.publication .publication-prose td {
+  padding: 0.5em 0.75em;
+  border-bottom: 1px solid var(--border-secondary);
+}
+
+.publication .publication-prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .publication .publication-footer {
   margin-top: 3rem;
   padding-top: 1.5rem;

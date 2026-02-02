@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { MarkdownImage } from "@/components/shared-note/MarkdownImage";
 
 export const dynamic = "force-dynamic";
@@ -13,6 +14,36 @@ type PageProps = {
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://api.getnotic.io";
+
+/**
+ * GFM tables require a delimiter row (e.g. | --- | --- |) after the header.
+ * If content has pipe-separated rows but the second line isn't a delimiter, insert one.
+ * Only inserts at the start of a table (when previous line is not a table row).
+ */
+function ensureTableDelimiterRow(content: string): string {
+  const lines = content.split("\n");
+  const isTableRow = (s: string) => /^\|.+\|/.test(s.trim());
+  const isDelimiterRow = (s: string) =>
+    /^\|[\s\-:]*\|(\s*[\-\s:]*\|)*\s*$/.test(s.trim());
+  const out: string[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]!;
+    out.push(line);
+    const trimmed = line.trim();
+    if (!isTableRow(trimmed)) continue;
+    const next = lines[i + 1];
+    if (next === undefined) continue;
+    const nextTrimmed = next.trim();
+    if (!isTableRow(nextTrimmed) || isDelimiterRow(nextTrimmed)) continue;
+    const prev = lines[i - 1];
+    if (prev !== undefined && isTableRow(prev.trim())) continue; // already in table body
+    const pipeCount = (trimmed.match(/\|/g) || []).length;
+    const cols = Math.max(1, pipeCount - 1);
+    const delimiter = "| " + Array(cols).fill("---").join(" | ") + " |";
+    out.push(delimiter);
+  }
+  return out.join("\n");
+}
 
 /** Same rule as extension extractTitle: first line as # heading, else first line (50 chars), else "Untitled". */
 function extractTitleFromContent(content: string): string {
@@ -84,6 +115,7 @@ export default async function PublishedNotePage({ params }: PageProps) {
 
   const { content, displayName, lastModified } = note;
   const title = displayName || extractTitleFromContent(content);
+  const isEmpty = !content || content.trim() === "";
 
   const formattedDate =
     lastModified &&
@@ -104,13 +136,20 @@ export default async function PublishedNotePage({ params }: PageProps) {
             )}
           </header>
           <div className="publication-prose [&_pre]:rounded-md [&_pre]:border [&_pre]:border-[var(--border-primary)] [&_pre]:bg-[var(--bg-tertiary)] [&_pre]:p-4 [&_pre]:text-sm [&_ul]:my-4 [&_ol]:my-4 [&_li]:my-0.5">
-            <ReactMarkdown
-              components={{
-                img: MarkdownImage,
-              }}
-            >
-              {content}
-            </ReactMarkdown>
+            {isEmpty ? (
+              <p className="text-[var(--text-muted)] italic">
+                This note is empty.
+              </p>
+            ) : (
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm as import("unified").Pluggable]}
+                components={{
+                  img: MarkdownImage,
+                }}
+              >
+                {ensureTableDelimiterRow(content)}
+              </ReactMarkdown>
+            )}
           </div>
           <footer className="publication-footer">
             <Link
