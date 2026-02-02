@@ -15,9 +15,10 @@ export function MarkdownImage({
   const [loadFailed, setLoadFailed] = useState(false);
 
   const copyImage = useCallback(async () => {
-    if (!src) return;
+    const url = typeof src === "string" ? src : "";
+    if (!url) return;
     try {
-      const res = await fetch(src, { mode: "cors" });
+      const res = await fetch(url, { mode: "cors" });
       const blob = await res.blob();
       await navigator.clipboard.write([
         new ClipboardItem({ [blob.type]: blob }),
