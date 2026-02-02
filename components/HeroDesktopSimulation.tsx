@@ -69,12 +69,12 @@ function SpreadsheetMockup() {
       <div className="flex-shrink-0 px-2 sm:px-3 pt-1.5 sm:pt-2 pb-0.5 sm:pb-1">
         <h3 className="text-[10px] sm:text-[11px] font-semibold text-[var(--text-primary)] truncate">Finance_Q4</h3>
       </div>
-      <div className="flex-1 overflow-auto p-2 min-h-0">
+      <div className="flex-1 overflow-auto p-2 min-h-0 bg-white rounded-b">
         <table className="w-full text-left border-collapse" style={{ fontSize: "10px" }}>
           <thead>
-            <tr className="border-b border-[var(--border-primary)] bg-[var(--bg-primary)]">
+            <tr className="border-b border-blue-200/80 bg-blue-50">
               {rows[0].map((cell, j) => (
-                <th key={j} className="px-2 py-1.5 font-semibold text-[var(--text-secondary)]">
+                <th key={j} className="px-2 py-1.5 font-semibold text-blue-900/90">
                   {cell}
                 </th>
               ))}
@@ -82,11 +82,11 @@ function SpreadsheetMockup() {
           </thead>
           <tbody>
             {rows.slice(1).map((row, i) => (
-              <tr key={i} className="border-b border-[var(--border-secondary)]/60">
+              <tr key={i} className="border-b border-[var(--border-secondary)]/60 bg-white">
                 {row.map((cell, j) => (
                   <td
                     key={j}
-                    className={`px-2 py-1.5 ${
+                    className={`px-2 py-1.5 bg-white ${
                       cell.startsWith("+") ? "text-emerald-600 font-medium" : cell.startsWith("-") ? "text-red-500 font-medium" : "text-[var(--text-secondary)]"
                     }`}
                   >

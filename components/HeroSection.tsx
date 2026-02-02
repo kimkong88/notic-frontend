@@ -24,8 +24,8 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-[var(--text-primary)] mb-10 sm:mb-12 md:mb-14 tracking-tighter leading-[0.95]"
         >
@@ -35,8 +35,8 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[var(--text-muted)] text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mb-12 sm:mb-16 md:mb-20 leading-relaxed font-medium px-0"
         >
@@ -64,7 +64,7 @@ export default function HeroSection() {
           transition={{ duration: 1.2, delay: 0.4 }}
           className="w-full relative"
         >
-          {/* Accent glow behind browser + floating editor */}
+          {/* Accent glow behind browser + floating editor – opacity ok (no text) */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,520px)] h-[280px] bg-[var(--accent)]/12 blur-[70px] rounded-3xl pointer-events-none" />
           <HeroDesktopSimulation />
           <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-40 h-40 bg-[var(--accent)]/10 blur-[80px] rounded-full hidden lg:block pointer-events-none" />
@@ -73,8 +73,8 @@ export default function HeroSection() {
 
         {/* Four proof points – below browser, icon + title inline */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 16 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="w-full max-w-7xl px-0 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-40 sm:mt-28 md:mt-32 min-w-0"
         >
