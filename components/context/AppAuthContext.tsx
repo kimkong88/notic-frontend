@@ -24,15 +24,16 @@ export function AppAuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (pathname !== "/billing") {
-      setLoggedIn(false);
+      queueMicrotask(() => setLoggedIn(false));
       return;
     }
     fetch("/api/auth/session", { credentials: "include" })
       .then((res) => {
-        if (res.ok) setLoggedIn(true);
-        else setLoggedIn(false);
+        queueMicrotask(() => setLoggedIn(res.ok));
       })
-      .catch(() => setLoggedIn(false));
+      .catch(() => {
+        queueMicrotask(() => setLoggedIn(false));
+      });
   }, [pathname]);
 
   const setLoggedInStable = useCallback((value: boolean) => {

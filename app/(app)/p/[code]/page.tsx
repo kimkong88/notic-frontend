@@ -12,7 +12,7 @@ type PageProps = {
 };
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "https://api.notelight.app";
+  process.env.NEXT_PUBLIC_API_URL || "https://api.getnotic.io";
 
 /** Same rule as extension extractTitle: first line as # heading, else first line (50 chars), else "Untitled". */
 function extractTitleFromContent(content: string): string {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.notelight.app";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.getnotic.io";
 
 /** GET: proxy to backend /billing/status with Bearer from cookie. */
 export async function GET(request: NextRequest) {

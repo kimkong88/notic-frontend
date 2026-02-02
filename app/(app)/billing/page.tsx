@@ -7,7 +7,7 @@ import BillingContent from "@/components/billing/BillingContent";
 import BillingAuthScreen from "@/components/billing/BillingAuthScreen";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "https://api.notelight.app";
+  process.env.NEXT_PUBLIC_API_URL || "https://api.getnotic.io";
 
 type AuthMode = "token" | "jwt" | "none" | null;
 

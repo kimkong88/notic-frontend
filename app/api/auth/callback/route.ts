@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token";
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.notelight.app";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.getnotic.io";
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
