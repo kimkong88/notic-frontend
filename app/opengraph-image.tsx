@@ -86,7 +86,7 @@ export default async function Image() {
             marginBottom: '40px',
           }}
         >
-          {/* Logo Icon */}
+          {/* Logo Icon – same Lucide Layers (top filled) as components/Logo.tsx */}
           <div
             style={{
               width: '96px',
@@ -105,9 +105,9 @@ export default async function Image() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M3 14L12 18L21 14L12 10L3 14Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
-              <path d="M3 10L12 14L21 10L12 6L3 10Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
-              <path d="M3 6L12 10L21 6L12 2L3 6Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="white"/>
+              <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="white"/>
+              <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
             </svg>
           </div>
           {/* Logo Text */}
