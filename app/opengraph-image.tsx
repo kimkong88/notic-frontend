@@ -139,7 +139,7 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: fonts as Parameters<typeof ImageResponse>[1]["fonts"],
+      fonts,
     }
   );
 }
