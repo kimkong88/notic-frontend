@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { useAppAuth } from "@/components/context/AppAuthContext";
 import BillingContent from "@/components/billing/BillingContent";
 import BillingAuthScreen from "@/components/billing/BillingAuthScreen";
 
@@ -11,9 +12,16 @@ const API_URL =
 type AuthMode = "token" | "jwt" | "none" | null;
 
 export default function BillingPage() {
+  const { setLoggedIn } = useAppAuth();
   const [authMode, setAuthMode] = useState<AuthMode>(null);
   const [billingToken, setBillingToken] = useState<string | null>(null);
   const [accessToken, setAccessToken] = useState<string | null>(null);
+
+  /** Sync auth state to app header (Sign out vs Get Notic). */
+  useEffect(() => {
+    if (authMode === "token" || authMode === "jwt") setLoggedIn(true);
+    else if (authMode === "none") setLoggedIn(false);
+  }, [authMode, setLoggedIn]);
 
   /** Pure check: does a cookie-based session exist? (no setState – effect applies state.) */
   const hasCookieSession = useCallback(async (): Promise<boolean> => {

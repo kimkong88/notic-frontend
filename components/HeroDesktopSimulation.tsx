@@ -16,12 +16,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
 
 const TABS = [
+  { title: "Pipeline", icon: <Layout className="w-4 h-4" />, url: "lightning.force.com/opportunities" },
   { title: "Google Meet", icon: <Video className="w-4 h-4" />, url: "meet.google.com/abc-defg-hij" },
   { title: "Finance_Q4.csv", icon: <Table className="w-4 h-4" />, url: "docs.google.com/spreadsheets/d/..." },
-  { title: "Salesforce CRM", icon: <Layout className="w-4 h-4" />, url: "lightning.force.com/opportunities" },
 ];
 
-/** Google Meet – light theme: video tiles, participant avatars (2×3 grid, no overlap) */
+/** Google Meet – header/controls match existing; video tile area reads as video (dark tiles). */
 function MeetMockup() {
   return (
     <div className="w-full h-full rounded-lg overflow-hidden bg-[#f8f9fa] border border-[var(--border-primary)] flex flex-col min-h-0">
@@ -32,13 +32,13 @@ function MeetMockup() {
         {[1, 2, 3, 4, 5, 6].map((i) => (
           <div
             key={i}
-            className="min-w-0 min-h-0 rounded sm:rounded-lg bg-[var(--bg-primary)] border border-[var(--border-primary)] flex items-center justify-center overflow-hidden relative shadow-sm"
+            className="min-w-0 min-h-0 rounded sm:rounded-lg bg-[#1e293b] border border-[#334155] flex items-center justify-center overflow-hidden relative shadow-sm"
           >
             <div className="w-6 h-6 sm:w-10 sm:h-10 rounded-full bg-emerald-500/80 flex items-center justify-center text-white text-[10px] sm:text-sm font-medium shrink-0">
               {String.fromCharCode(64 + i)}
             </div>
             {i === 1 && (
-              <div className="absolute bottom-0.5 left-0.5 sm:bottom-1 sm:left-1 px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded bg-[var(--text-primary)]/80 text-[8px] sm:text-[10px] text-white font-medium">
+              <div className="absolute bottom-0.5 left-0.5 sm:bottom-1 sm:left-1 px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded bg-black/50 text-[8px] sm:text-[10px] text-white font-medium">
                 You
               </div>
             )}
@@ -55,7 +55,7 @@ function MeetMockup() {
   );
 }
 
-/** Spreadsheet – headers, rows, numbers, subtle green/red */
+/** Spreadsheet – matches Meet/Pipeline chrome: same outer bg, header padding, footer. */
 function SpreadsheetMockup() {
   const rows = [
     ["Region", "Q4 Revenue", "Growth", "Target"],
@@ -65,14 +65,14 @@ function SpreadsheetMockup() {
     ["West", "$156k", "+18%", "✓"],
   ];
   return (
-    <div className="w-full h-full rounded-lg overflow-hidden bg-white border border-[var(--border-primary)] flex flex-col">
-      <div className="flex-shrink-0 px-2 pt-2 pb-1">
-        <h3 className="text-[11px] font-semibold text-[var(--text-primary)]">Finance_Q4</h3>
+    <div className="w-full h-full rounded-lg overflow-hidden bg-[#f8f9fa] border border-[var(--border-primary)] flex flex-col min-h-0">
+      <div className="flex-shrink-0 px-2 sm:px-3 pt-1.5 sm:pt-2 pb-0.5 sm:pb-1">
+        <h3 className="text-[10px] sm:text-[11px] font-semibold text-[var(--text-primary)] truncate">Finance_Q4</h3>
       </div>
       <div className="flex-1 overflow-auto p-2 min-h-0">
         <table className="w-full text-left border-collapse" style={{ fontSize: "10px" }}>
           <thead>
-            <tr className="border-b border-[var(--border-primary)] bg-[#f8fafc]">
+            <tr className="border-b border-[var(--border-primary)] bg-[var(--bg-primary)]">
               {rows[0].map((cell, j) => (
                 <th key={j} className="px-2 py-1.5 font-semibold text-[var(--text-secondary)]">
                   {cell}
@@ -98,7 +98,7 @@ function SpreadsheetMockup() {
           </tbody>
         </table>
       </div>
-      <div className="flex-shrink-0 h-6 bg-[#f1f5f9] border-t border-[var(--border-primary)] flex items-center px-2 text-[10px] text-[var(--text-muted)]">
+      <div className="flex-shrink-0 h-6 bg-[var(--bg-primary)] border-t border-[var(--border-primary)] flex items-center px-2 text-[10px] text-[var(--text-muted)]">
         Sheet1
       </div>
     </div>
@@ -114,11 +114,11 @@ function CRMMockup() {
     { title: "Won", color: "bg-emerald-50 border-emerald-200", deals: ["Prime Inc"] },
   ];
   return (
-    <div className="w-full h-full rounded-lg overflow-hidden bg-[#f4f6f9] border border-[var(--border-primary)] p-2 flex flex-col">
-      <div className="flex-shrink-0 mb-2">
-        <h3 className="text-[11px] font-semibold text-[var(--text-primary)]">Pipeline</h3>
+    <div className="w-full h-full rounded-lg overflow-hidden bg-[#f8f9fa] border border-[var(--border-primary)] flex flex-col min-h-0">
+      <div className="flex-shrink-0 px-2 sm:px-3 pt-1.5 sm:pt-2 pb-0.5 sm:pb-1">
+        <h3 className="text-[10px] sm:text-[11px] font-semibold text-[var(--text-primary)] truncate">Pipeline</h3>
       </div>
-      <div className="flex-1 flex gap-2 min-h-0 overflow-hidden">
+      <div className="flex-1 flex gap-2 min-h-0 overflow-hidden p-2">
         {columns.map((col, i) => (
           <div key={i} className={`flex-1 min-w-0 rounded-lg border ${col.color} p-1.5 flex flex-col`}>
             <div className="flex-shrink-0 flex items-center justify-between mb-1">
@@ -185,9 +185,9 @@ export default function HeroDesktopSimulation() {
             transition={{ duration: 0.6 }}
             className="w-full h-full rounded-lg overflow-hidden flex flex-col"
           >
-            {activeTab === 0 && <MeetMockup />}
-            {activeTab === 1 && <SpreadsheetMockup />}
-            {activeTab === 2 && <CRMMockup />}
+            {activeTab === 0 && <CRMMockup />}
+            {activeTab === 1 && <MeetMockup />}
+            {activeTab === 2 && <SpreadsheetMockup />}
           </motion.div>
         </AnimatePresence>
 

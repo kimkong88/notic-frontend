@@ -1,4 +1,5 @@
 import React from "react";
+import { AppAuthProvider } from "@/components/context/AppAuthContext";
 import AppHeader from "@/components/layout/AppHeader";
 
 /**
@@ -11,9 +12,11 @@ export default function AppLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)]">
-      <AppHeader />
-      {children}
-    </div>
+    <AppAuthProvider>
+      <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)]">
+        <AppHeader />
+        {children}
+      </div>
+    </AppAuthProvider>
   );
 }

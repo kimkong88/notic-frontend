@@ -3,13 +3,16 @@
 import React from "react";
 import Logo from "../Logo";
 import Link from "next/link";
-import { Chrome } from "lucide-react";
+import { Chrome, LogOut } from "lucide-react";
+import { useAppAuth } from "@/components/context/AppAuthContext";
 
 /**
  * Header for (app) route group: billing, published notes.
- * Simpler than marketing Header: logo, Billing, Get Notic CTA.
+ * Shows Sign out when logged in (OAuth or token); otherwise Get Notic CTA.
  */
 export default function AppHeader() {
+  const { isLoggedIn } = useAppAuth();
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[var(--border-primary)] bg-[var(--bg-primary)] py-4">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -21,20 +24,21 @@ export default function AppHeader() {
           <span className="text-2xl font-bold tracking-tight">Notic</span>
         </Link>
 
-        <div className="flex items-center gap-6">
+        {isLoggedIn ? (
           <Link
-            href="/billing"
-            className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+            href="/api/auth/logout"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
-            Billing
+            <LogOut className="w-4 h-4" /> Sign out
           </Link>
+        ) : (
           <Link
             href="/download"
             className="inline-flex items-center gap-2 bg-[var(--accent)] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[var(--accent-hover)] transition-colors"
           >
             <Chrome className="w-4 h-4" /> Get Notic
           </Link>
-        </div>
+        )}
       </div>
     </nav>
   );
