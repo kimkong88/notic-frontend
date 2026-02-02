@@ -2,26 +2,27 @@
 # Learn more: https://llmstxt.org/
 
 # Site Information
-Name: Floatify
-Description: Floating YouTube Player - Search, Browse Feed, and Multitask without switching tabs. YouTube Mini Player, Evolved.
-URL: https://floatify.app
+Name: Notic
+Description: Notic - The note that floats over every tab. Local-first sticky notes in your browser. Markdown, folders, sync across devices. Minimal scratchpad that stays on top.
+URL: https://getnotic.io
 
 # Contact
-Contact: support@floatify.app
+Contact: hello@getnotic.io
 
 # Product Information
-Product: Floatify - Chrome Extension
-Category: Browser Extension, Video Player, Productivity Tool
+Product: Notic - Chrome Extension
+Category: Browser Extension, Notes, Productivity Tool
 Platform: Chrome Browser
 Features: 
-  - Floating YouTube Player
-  - Video Search & Discovery
-  - Interactive YouTube Feed
-  - Privacy Mode
-  - Keyboard-First Controls
+  - Floating notes over every tab
+  - Markdown, folders, images
+  - Sync across devices (optional)
+  - Export to .md
+  - Notion & Obsidian integrations
+  - Publish & share
 
 # Allowed Crawlers
 Crawlers: GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, CCBot
 
 # Sitemap
-Sitemap: https://floatify.app/sitemap.xml
+Sitemap: https://getnotic.io/sitemap.xml

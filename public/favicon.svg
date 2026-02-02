@@ -1,9 +1,8 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background with rounded corners (rounded-xl = 12px on 40px, scaled to 32px = ~9.6px, use 10px) -->
-  <rect width="32" height="32" rx="10" fill="#E63946"/>
-  <!-- Play icon centered and scaled -->
-  <g transform="translate(6, 6)">
-    <rect x="2.4" y="4" width="14.4" height="11.2" rx="2.4" stroke="white" stroke-width="2" fill="none"/>
-    <path d="M8 7.2L12 10L8 12.8V7.2Z" fill="white"/>
+  <rect width="32" height="32" rx="10" fill="#4f46e5"/>
+  <g transform="translate(4, 4)" stroke="white" stroke-width="1.5" stroke-linejoin="round" fill="none">
+    <path d="M3 14L12 18L21 14L12 10L3 14Z"/>
+    <path d="M3 10L12 14L21 10L12 6L3 10Z"/>
+    <path d="M3 6L12 10L21 6L12 2L3 6Z" fill="white"/>
   </g>
 </svg>

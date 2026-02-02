@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Floatify - Floating YouTube Player';
+export const alt = 'Notic - The note that floats over every tab';
 export const size = {
   width: 1200,
   height: 630,
@@ -91,7 +91,7 @@ export default async function Image() {
             style={{
               width: '96px',
               height: '96px',
-              background: '#E63946',
+              background: '#4f46e5',
               borderRadius: '20px',
               display: 'flex',
               alignItems: 'center',
@@ -105,8 +105,9 @@ export default async function Image() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect x="3" y="5" width="18" height="14" rx="3" stroke="white" strokeWidth="2.5" fill="none"/>
-              <path d="M10 9L15 12L10 15V9Z" fill="white"/>
+              <path d="M3 14L12 18L21 14L12 10L3 14Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
+              <path d="M3 10L12 14L21 10L12 6L3 10Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
+              <path d="M3 6L12 10L21 6L12 2L3 6Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="white"/>
             </svg>
           </div>
           {/* Logo Text */}
@@ -114,12 +115,12 @@ export default async function Image() {
             style={{
               fontSize: '72px',
               fontWeight: 700,
-              color: '#0B0B0C',
+              color: '#18181b',
               letterSpacing: '-0.02em',
               lineHeight: '1',
             }}
           >
-            Floatify
+            Notic
           </span>
         </div>
         {/* Subheading */}
@@ -127,18 +128,18 @@ export default async function Image() {
           style={{
             fontSize: '42px',
             fontWeight: 600,
-            color: '#666666',
+            color: '#71717a',
             letterSpacing: '-0.01em',
             lineHeight: '1.2',
           }}
         >
-          Floating YouTube Player
+          The note that floats over every tab
         </span>
       </div>
     ),
     {
       ...size,
-      fonts: fonts as any,
+      fonts: fonts as Parameters<typeof ImageResponse>[1]["fonts"],
     }
   );
 }

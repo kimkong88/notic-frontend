@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
@@ -17,45 +17,56 @@ const geistMono = Geist_Mono({
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Floatify - Floating YouTube Player",
-    template: "%s | Floatify",
+    default: "Notic – The note that floats over every tab",
+    template: "%s | Notic",
   },
-  description: "The only floating player that lets you Search, Browse Feed, and Multitask without switching tabs. YouTube Mini Player, Evolved.",
-  keywords: ["YouTube", "floating player", "PiP", "picture in picture", "Chrome extension", "video player", "multitasking"],
-  authors: [{ name: "Floatify" }],
-  creator: "Floatify",
-  publisher: "Floatify",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://floatify.app'),
-  alternates: {
-    canonical: '/',
-  },
+  description:
+    "Chrome extension: sticky notes that float over every tab. Markdown, folders, sync. No hunting for that tab.",
+  keywords: [
+    "notes",
+    "sticky notes",
+    "Chrome extension",
+    "floating notes",
+    "markdown",
+    "sync",
+    "scratchpad",
+    "browser notes",
+  ],
+  authors: [{ name: "Notic" }],
+  creator: "Notic",
+  publisher: "Notic",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://getnotic.io"
+  ),
+  alternates: { canonical: "/" },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: '/',
-    siteName: 'Floatify',
-    title: 'Floatify - Floating YouTube Player',
-    description: 'The only floating player that lets you Search, Browse Feed, and Multitask without switching tabs. YouTube Mini Player, Evolved.',
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Notic",
+    title: "Notic – The note that floats over every tab",
+    description:
+      "Chrome extension: sticky notes that float over every tab. Markdown, folders, sync.",
     images: [
       {
-        url: '/opengraph-image',
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: 'Floatify - Floating YouTube Player',
+        alt: "Notic – The note that floats over every tab",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Floatify - Floating YouTube Player',
-    description: 'The only floating player that lets you Search, Browse Feed, and Multitask without switching tabs.',
-    images: ['/opengraph-image'],
-    creator: '@floatify',
+    card: "summary_large_image",
+    title: "Notic – The note that floats over every tab",
+    description:
+      "Chrome extension: sticky notes that float over every tab. Markdown, folders, sync.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -63,17 +74,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/logo.svg', type: 'image/svg+xml', sizes: 'any' },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.svg", type: "image/svg+xml", sizes: "any" },
     ],
-    apple: '/logo.svg',
+    apple: "/logo.svg",
   },
 };
 
@@ -89,7 +100,7 @@ export default function RootLayout({
       >
         <StructuredData />
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );

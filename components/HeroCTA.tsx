@@ -1,21 +1,24 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Chrome } from 'lucide-react';
-import { track } from '@vercel/analytics';
+import React from "react";
+import { Chrome } from "lucide-react";
+import { track } from "@vercel/analytics";
 
-export default function HeroCTA() {
+const baseButtonClass =
+  "inline-flex items-center justify-center gap-2 sm:gap-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-6 sm:px-8 py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg font-semibold transition-colors shadow-sm hover:shadow-md cursor-pointer w-full sm:w-auto";
+
+export default function HeroCTA({ className = "" }: { className?: string }) {
   const handleInstall = () => {
-    track('install');
+    track("install");
   };
 
   return (
     <a
       href="/download"
       onClick={handleInstall}
-      className="bg-[#E63946] px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 transition-all hover:brightness-110 hover:translate-y-[-2px] hover:shadow-[0_12px_24px_rgba(230,57,70,0.3)] cursor-pointer"
+      className={`${baseButtonClass} ${className}`.trim()}
     >
-      <Chrome size={20} className="sm:w-6 sm:h-6 w-5 h-5" />
+      <Chrome className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
       <span className="whitespace-nowrap">Add to Chrome — Free</span>
     </a>
   );

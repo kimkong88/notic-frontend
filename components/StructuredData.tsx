@@ -1,24 +1,24 @@
 export default function StructuredData() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://floatify.app';
-  
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://getnotic.io';
+
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Floatify',
+    name: 'Notic',
     url: baseUrl,
     logo: `${baseUrl}/logo.svg`,
-    description: 'Floating YouTube Player - Search, Browse Feed, and Multitask without switching tabs.',
+    description: 'Chrome extension: the note that floats over every tab. Local-first sticky notes, Markdown, folders, sync.',
     sameAs: [
       // Add your social media links here when available
-      // 'https://twitter.com/floatify',
-      // 'https://github.com/floatify',
+      // 'https://twitter.com/getnotic',
+      // 'https://github.com/getnotic',
     ],
   };
 
   const softwareApplicationSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Floatify',
+    name: 'Notic',
     applicationCategory: 'BrowserExtension',
     operatingSystem: 'Chrome',
     offers: {
@@ -26,12 +26,7 @@ export default function StructuredData() {
       price: '0',
       priceCurrency: 'USD',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      ratingCount: '1',
-    },
-    description: 'The only floating player that lets you Search, Browse Feed, and Multitask without switching tabs. YouTube Mini Player, Evolved.',
+    description: 'Chrome extension: sticky notes that float over every tab. Markdown, folders, sync across devices.',
     url: baseUrl,
     screenshot: `${baseUrl}/opengraph-image`,
   };
@@ -39,12 +34,12 @@ export default function StructuredData() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Floatify',
+    name: 'Notic',
     url: baseUrl,
-    description: 'Floating YouTube Player - Search, Browse Feed, and Multitask without switching tabs.',
+    description: 'Chrome extension: the note that floats over every tab. Local-first sticky notes, Markdown, folders, sync.',
     publisher: {
       '@type': 'Organization',
-      name: 'Floatify',
+      name: 'Notic',
       logo: {
         '@type': 'ImageObject',
         url: `${baseUrl}/logo.svg`,

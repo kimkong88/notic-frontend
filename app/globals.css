@@ -1,69 +1,107 @@
 @import "tailwindcss";
 
+/* Notic – minimal light theme (matches extension) */
 :root {
-  --background: #0B0B0C;
-  --foreground: #ffffff;
-  --brand-red: #E63946;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f4f4f5;
+  --border-primary: #e4e4e7;
+  --border-secondary: #d4d4d8;
+  --text-primary: #18181b;
+  --text-secondary: #3f3f46;
+  --text-muted: #71717a;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-light: rgba(79, 70, 229, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Custom utility classes */
-.glass-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Light card – subtle border, no heavy glass */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+}
+
+.card-muted {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #a1a1a1 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.floating-ui {
-  animation: float 6s ease-in-out infinite;
-}
-
-.float-glow::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  background: var(--brand-red);
-  filter: blur(15px);
-  opacity: 0.3;
-  z-index: -1;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* Selection styling */
 ::selection {
-  background-color: rgba(230, 57, 70, 0.3);
+  background-color: rgba(79, 70, 229, 0.2);
+}
+
+/* Bento section – white background; cards flat, no gradient */
+.bento-section {
+  background: var(--bg-primary);
+}
+
+.bento-section .card {
+  border: none;
+  background: rgba(79, 70, 229, 0.04);
+}
+
+.bento-grid {
+  isolation: isolate;
+}
+
+.bento-card {
+  border: 3px solid transparent;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.bento-card:hover,
+.bento-card:focus-visible {
+  transform: scale(1.02) translateZ(0);
+  border-color: var(--accent);
+  z-index: 1;
+  isolation: isolate;
+  outline: none;
+}
+
+/* Dim siblings only (no blur) so focused card edge stays crisp */
+.bento-grid:has(.bento-card:hover) .bento-card:not(:hover),
+.bento-grid:has(.bento-card:focus-visible) .bento-card:not(:focus-visible) {
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-card {
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .bento-grid:has(.bento-card:hover) .bento-card:not(:hover),
+  .bento-grid:has(.bento-card:focus-visible) .bento-card:not(:focus-visible) {
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.85;
+  }
+
+  .bento-card:hover,
+  .bento-card:focus-visible {
+    transform: none;
+  }
 }

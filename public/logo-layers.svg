@@ -1,0 +1,8 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bottom layer (outline) -->
+  <path d="M3 14L12 18L21 14L12 10L3 14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+  <!-- Middle layer (outline) -->
+  <path d="M3 10L12 14L21 10L12 6L3 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+  <!-- Top layer (filled) -->
+  <path d="M3 6L12 10L21 6L12 2L3 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="currentColor"/>
+</svg>
