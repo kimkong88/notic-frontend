@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Notes and data in the extension:</strong> Notes, folders, and workspace data are stored locally in your browser (Chrome storage). We do not have access to this data unless you choose to sign in and use sync.</li>
                 <li><strong>When you sign in (optional):</strong> If you sign in with Google to use sync, we receive your Google account identifier and store your synced notes, folders, and workspaces on our servers so you can access them from another browser or device. We use this data only to provide sync; we do not use it for advertising, AI training, or selling.</li>
                 <li><strong>Payment information:</strong> When you subscribe to Pro, Lemon Squeezy (our payment processor) collects and processes your payment details. We do not store your full payment information. We may receive your email and subscription status from Lemon Squeezy for account and billing purposes.</li>
-                <li><strong>Website analytics:</strong> Our website may use analytics (e.g. Vercel Analytics) to collect basic usage statistics (page views, traffic sources). This data is anonymized and aggregated.</li>
+                <li><strong>Website analytics:</strong> Our website uses Umami to collect basic usage statistics (page views, traffic sources). This data is anonymized and aggregated; no cookies are used for analytics.</li>
               </ul>
             </section>
 
@@ -66,7 +66,8 @@ export default function PrivacyPolicy() {
                 <li><strong>Lemon Squeezy:</strong> Processes payments and manages Pro subscriptions. Their privacy policy applies to payment data: <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">lemonsqueezy.com/privacy</a></li>
                 <li><strong>Google:</strong> Used for optional sign-in (Google account) to enable sync. We receive only the information necessary to identify your account and provide sync. Google&apos;s privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">policies.google.com/privacy</a></li>
                 <li><strong>Chrome Web Store:</strong> Handles extension distribution. Google&apos;s policies apply to installation and updates.</li>
-                <li><strong>Vercel (or similar):</strong> Hosts our website and may provide analytics. Their privacy policy applies to website traffic data.</li>
+                <li><strong>Umami:</strong> We use Umami (cloud.umami.is) for privacy-friendly website analytics. Their privacy policy applies: <a href="https://umami.is/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">umami.is/privacy-policy</a></li>
+                <li><strong>Vercel (or similar):</strong> Hosts our website. Their privacy policy applies to hosting and traffic data.</li>
               </ul>
             </section>
 

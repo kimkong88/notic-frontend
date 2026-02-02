@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { MarkdownImage } from "@/components/shared-note/MarkdownImage";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 type PageProps = {
   params: Promise<{ code: string }>;
 };

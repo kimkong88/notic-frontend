@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
@@ -100,7 +100,11 @@ export default function RootLayout({
       >
         <StructuredData />
         {children}
-        {process.env.NODE_ENV === "production" && <Analytics />}
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="e3874e1a-bb69-4a45-bd5b-f28584930834"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

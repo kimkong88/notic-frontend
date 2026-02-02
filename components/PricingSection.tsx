@@ -2,7 +2,12 @@
 
 import React, { useState } from "react";
 import { Check, ShieldCheck } from "lucide-react";
-import { track } from "@vercel/analytics";
+
+declare global {
+  interface Window {
+    umami?: { track: (event: string, data?: object) => void };
+  }
+}
 
 export default function PricingSection() {
   const [billingPeriod, setBillingPeriod] = useState<
@@ -14,12 +19,12 @@ export default function PricingSection() {
   const yearlySavings = 37; // vs 12 months at monthly
 
   const handleFreeInstall = () => {
-    track("install");
+    window.umami?.track("install");
     window.location.href = "/download";
   };
 
   const handleUpgrade = () => {
-    track("upgrade_click");
+    window.umami?.track("upgrade_click");
     window.location.href = "/download#pricing";
   };
 

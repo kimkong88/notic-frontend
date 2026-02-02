@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 type AppAuthContextValue = {
   isLoggedIn: boolean;
@@ -18,15 +19,21 @@ export function useAppAuth() {
 }
 
 export function AppAuthProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
+    if (pathname !== "/billing") {
+      setLoggedIn(false);
+      return;
+    }
     fetch("/api/auth/session", { credentials: "include" })
       .then((res) => {
         if (res.ok) setLoggedIn(true);
+        else setLoggedIn(false);
       })
-      .catch(() => {});
-  }, []);
+      .catch(() => setLoggedIn(false));
+  }, [pathname]);
 
   const setLoggedInStable = useCallback((value: boolean) => {
     setLoggedIn(value);
