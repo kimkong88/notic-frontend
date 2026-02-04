@@ -30,9 +30,9 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.1 }}
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-[var(--text-primary)] mb-10 sm:mb-12 md:mb-14 tracking-tighter leading-[0.95]"
                 >
-                    The note that floats
+                    A note that floats
                     <br />
-                    <span className="gradient-text">over every tab.</span>
+                    <span className="gradient-text">on top of your browser.</span>
                 </motion.h1>
 
                 <motion.p
@@ -41,9 +41,8 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-[var(--text-muted)] text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mb-12 sm:mb-16 md:mb-20 leading-relaxed font-medium px-0"
                 >
-                    Tired of the "copy-paste-alt-tab" dance? Notic stays pinned
-                    over your browser so you can capture ideas and clip content
-                    instantly—no window management required.
+                    Not another tab—a separate window that stays visible while you
+                    switch tabs. Capture ideas and clip content without losing your place.
                 </motion.p>
 
                 <motion.div

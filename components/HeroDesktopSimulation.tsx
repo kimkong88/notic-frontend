@@ -11,15 +11,107 @@ import {
   Check,
   Maximize2,
   X,
+  Code2,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
 
 const TABS = [
+  { title: "notes.repository.ts", icon: <Code2 className="w-4 h-4" />, url: "lib/db/notes.repository.ts" },
   { title: "Pipeline", icon: <Layout className="w-4 h-4" />, url: "lightning.force.com/opportunities" },
   { title: "Google Meet", icon: <Video className="w-4 h-4" />, url: "meet.google.com/abc-defg-hij" },
   { title: "Finance_Q4.csv", icon: <Table className="w-4 h-4" />, url: "docs.google.com/spreadsheets/d/..." },
 ];
+
+/** Notic note content per tab – same note, context-aware use cases */
+const NOTIC_CONTENT = [
+  {
+    tabLabel: "Dev",
+    heading: "Query",
+    /** Dev: reference you keep visible – query, variable, or tutorial snippet */
+    plain: true,
+    items: [
+      { label: "SELECT id, title FROM notes WHERE user_id = ?", checked: false },
+      { label: "ORDER BY updated_at DESC LIMIT 50", checked: false },
+      { label: "-- testing with userId: test-abc-123", checked: false },
+    ],
+  },
+  {
+    tabLabel: "Deals",
+    heading: "Deal prep",
+    items: [
+      { label: "Send Acme proposal", checked: false },
+      { label: "Reply to Beta Co", checked: true },
+      { label: "Schedule Summit follow-up", checked: false },
+    ],
+  },
+  {
+    tabLabel: "Meeting",
+    heading: "Meeting notes",
+    /** Plain: decisions/actions jotted during the call, not a to-do list */
+    plain: true,
+    items: [
+      { label: "Decision: Q2 timeline agreed", checked: false },
+      { label: "Action: share deck with team", checked: false },
+      { label: "Follow-up: send summary by Fri", checked: false },
+    ],
+  },
+  {
+    tabLabel: "Finance",
+    heading: "Tasks",
+    items: [
+      { label: "Reconcile North figures", checked: false },
+      { label: "Update East forecast", checked: true },
+      { label: "Review West targets", checked: false },
+    ],
+  },
+];
+
+/** IDE / code editor – backend repo file (query in Notic = code here). First tab in carousel. */
+function IDEMockup() {
+  return (
+    <div className="w-full h-full rounded-lg overflow-hidden bg-[#f8f9fa] border border-[var(--border-primary)] flex flex-col min-h-0">
+      <div className="flex-shrink-0 px-2 sm:px-3 pt-1.5 sm:pt-2 pb-0.5 sm:pb-1 flex items-center gap-2">
+        <span className="text-[10px] sm:text-[11px] font-semibold text-[var(--text-primary)] truncate">notes.repository.ts</span>
+        <span className="text-[9px] text-[var(--text-muted)]">•</span>
+        <span className="text-[9px] text-[var(--text-muted)]">TypeScript</span>
+      </div>
+      <div className="flex-1 flex min-h-0 overflow-hidden rounded-b-lg">
+        {/* Sidebar – activity bar (narrow so code sits further left) */}
+        <div className="w-8 sm:w-9 flex-shrink-0 bg-[#1e1e1e] flex flex-col items-center py-1.5 gap-0.5 border-r border-[#2d2d2d]">
+          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded bg-[#2d2d2d] flex items-center justify-center ring-1 ring-[var(--accent)]/40">
+            <Code2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#858585]" />
+          </div>
+          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded bg-[#2d2d2d] flex items-center justify-center opacity-50" />
+          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded bg-[#2d2d2d] flex items-center justify-center opacity-50" />
+        </div>
+        {/* Editor – backend code that uses the query (see Notic for query) */}
+        <div className="flex-1 min-w-0 flex flex-col bg-[#1e1e1e] overflow-hidden">
+          <div className="flex-1 flex min-h-0 overflow-auto font-mono text-[9px] sm:text-[10px] leading-relaxed">
+            <div className="flex-shrink-0 w-5 sm:w-6 text-right pr-1 sm:pr-2 py-1.5 text-[#858585] select-none border-r border-[#2d2d2d]">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((n) => (
+                <div key={n}>{n}</div>
+              ))}
+            </div>
+            <div className="flex-1 py-1.5 pl-2 sm:pl-2.5 min-w-0 overflow-hidden text-left whitespace-pre font-mono text-[9px] sm:text-[10px] leading-relaxed">
+              <div><span className="text-[#569cd6]">export async function </span><span className="text-[#dcdcaa]">getNotes</span><span className="text-[#d4d4d4]">(</span><span className="text-[#9cdcfe]">userId</span><span className="text-[#d4d4d4]">: </span><span className="text-[#4ec9b0]">string</span><span className="text-[#d4d4d4]">) </span><span className="text-[#569cd6]">{"{"}</span></div>
+              <div><span className="text-[#9cdcfe]">  const </span><span className="text-[#9cdcfe]">res</span><span className="text-[#d4d4d4]"> = </span><span className="text-[#569cd6]">await</span><span className="text-[#d4d4d4]"> db.</span><span className="text-[#dcdcaa]">query</span><span className="text-[#d4d4d4]">(</span></div>
+              <div><span className="text-[#9cdcfe]">    </span><span className="text-[#ce9178]">&quot;SELECT id, title FROM notes WHERE user_id = ?&quot;</span><span className="text-[#d4d4d4]">,</span></div>
+              <div><span className="text-[#9cdcfe]">    </span><span className="text-[#d4d4d4]">[</span><span className="text-[#9cdcfe]">userId</span><span className="text-[#d4d4d4]">]</span></div>
+              <div><span className="text-[#9cdcfe]">  </span><span className="text-[#d4d4d4]">);</span></div>
+              <div><span className="text-[#9cdcfe]">  return </span><span className="text-[#9cdcfe]">res</span><span className="text-[#d4d4d4]">.</span><span className="text-[#dcdcaa]">rows</span><span className="text-[#d4d4d4]">;</span></div>
+              <div><span className="text-[#569cd6]">{"}"}</span></div>
+            </div>
+          </div>
+          <div className="flex-shrink-0 h-4 sm:h-5 px-2 flex items-center gap-3 bg-[#252526] border-t border-[#2d2d2d] text-[8px] sm:text-[9px] text-[#858585]">
+            <span>Ln 3, Col 24</span>
+            <span>TypeScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /** Google Meet – header/controls match existing; video tile area reads as video (dark tiles). */
 function MeetMockup() {
@@ -185,9 +277,10 @@ export default function HeroDesktopSimulation() {
             transition={{ duration: 0.6 }}
             className="w-full h-full rounded-lg overflow-hidden flex flex-col"
           >
-            {activeTab === 0 && <CRMMockup />}
-            {activeTab === 1 && <MeetMockup />}
-            {activeTab === 2 && <SpreadsheetMockup />}
+            {activeTab === 0 && <IDEMockup />}
+            {activeTab === 1 && <CRMMockup />}
+            {activeTab === 2 && <MeetMockup />}
+            {activeTab === 3 && <SpreadsheetMockup />}
           </motion.div>
         </AnimatePresence>
 
@@ -224,11 +317,11 @@ export default function HeroDesktopSimulation() {
             </div>
           </div>
 
-          {/* pip-tabs: tab bar; light: bg-tertiary */}
+          {/* pip-tabs: tab bar; active tab label reflects context (Dev / Deals / Meeting / Finance) */}
           <div className="flex-shrink-0 flex items-end gap-0 px-2 pt-2 bg-[var(--bg-tertiary)] border-b border-[var(--border-primary)] min-w-0">
             <div className="flex items-center gap-1.5 py-1.5 pl-2 pr-3 rounded-t-lg min-w-0 max-w-[180px] text-[13px] font-medium text-[var(--text-primary)] bg-[var(--bg-primary)] border-b-2 border-[var(--accent)] shadow-[0_1px_0_0_var(--bg-primary)] mb-[-1px]">
               <span className="w-2 h-2 rounded-sm bg-[var(--accent)] shrink-0" aria-hidden />
-              <span className="truncate">Quick list</span>
+              <span className="truncate">{NOTIC_CONTENT[activeTab].tabLabel}</span>
             </div>
             <div className="w-px h-5 self-center bg-[var(--border-primary)] shrink-0" aria-hidden />
             <div className="flex items-center gap-1.5 py-1.5 px-3 rounded-t-lg min-w-0 max-w-[120px] text-[13px] font-medium text-[var(--text-muted)] hover:text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] mb-[-1px]">
@@ -243,28 +336,47 @@ export default function HeroDesktopSimulation() {
             </button>
           </div>
 
-          {/* pip-content: editor area – minimal, universal note */}
-          <div className="flex-1 flex flex-col min-h-0">
-            <div className="flex-1 px-4 py-4 overflow-auto">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-3">
-                To do
-              </p>
-              <ul className="list-none pl-0 space-y-2.5">
-                <li className="flex items-center gap-2.5">
-                  <span className="w-3.5 h-3.5 rounded-[4px] border border-[var(--border-primary)] bg-[var(--bg-primary)] shrink-0 mt-0.5" aria-hidden />
-                  <span className="text-[13px] text-[var(--text-secondary)] leading-snug">Send proposal</span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="w-3.5 h-3.5 rounded-[4px] border border-[var(--accent)] bg-[var(--accent)] shrink-0 mt-0.5 flex items-center justify-center" aria-hidden>
-                    <Check className="w-2 h-2 text-white stroke-[2.5]" />
-                  </span>
-                  <span className="text-[13px] text-[var(--text-muted)] leading-snug line-through">Reply to Anna</span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="w-3.5 h-3.5 rounded-[4px] border border-[var(--border-primary)] bg-[var(--bg-primary)] shrink-0 mt-0.5" aria-hidden />
-                  <span className="text-[13px] text-[var(--text-secondary)] leading-snug">Schedule call</span>
-                </li>
-              </ul>
+          {/* pip-content: context-aware note (changes with tab) */}
+          <div className="flex-1 flex flex-col min-h-0 text-left">
+            <div className="flex-1 px-4 py-4 overflow-auto min-h-0 text-left">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.2 }}
+                  className="h-full"
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-3">
+                    {NOTIC_CONTENT[activeTab].heading}
+                  </p>
+                  {"plain" in NOTIC_CONTENT[activeTab] && NOTIC_CONTENT[activeTab].plain ? (
+                    <ul className="list-none pl-0 space-y-1.5 font-mono text-[12px] text-[var(--text-secondary)] text-left">
+                      {NOTIC_CONTENT[activeTab].items.map((item, i) => (
+                        <li key={`${activeTab}-${i}`} className="text-left">{item.label}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul className="list-none pl-0 space-y-2.5">
+                      {NOTIC_CONTENT[activeTab].items.map((item, i) => (
+                        <li key={`${activeTab}-${i}`} className="flex items-center gap-2.5">
+                          {item.checked ? (
+                            <span className="w-3.5 h-3.5 rounded-[4px] border border-[var(--accent)] bg-[var(--accent)] shrink-0 mt-0.5 flex items-center justify-center" aria-hidden>
+                              <Check className="w-2 h-2 text-white stroke-[2.5]" />
+                            </span>
+                          ) : (
+                            <span className="w-3.5 h-3.5 rounded-[4px] border border-[var(--border-primary)] bg-[var(--bg-primary)] shrink-0 mt-0.5" aria-hidden />
+                          )}
+                          <span className={`text-[13px] leading-snug ${item.checked ? "text-[var(--text-muted)] line-through" : "text-[var(--text-secondary)]"}`}>
+                            {item.label}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>

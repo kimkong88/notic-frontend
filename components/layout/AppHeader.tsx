@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../Logo";
 import Link from "next/link";
-import { Chrome, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { useAppAuth } from "@/components/context/AppAuthContext";
+import { APP_URL } from "@/lib/site";
 
 /**
  * Header for (app) route group: billing, published notes.
@@ -45,12 +46,14 @@ export default function AppHeader() {
             <LogOut className="w-4 h-4" /> Sign out
           </Link>
         ) : (
-          <Link
-            href="/download"
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[var(--accent)] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[var(--accent-hover)] transition-colors shadow-lg shadow-[var(--accent)]/20"
           >
-            <Chrome className="w-4 h-4" /> Add to Chrome
-          </Link>
+            Try Notic
+          </a>
         )}
       </div>
     </nav>

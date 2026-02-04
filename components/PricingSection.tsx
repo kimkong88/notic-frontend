@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Check, ShieldCheck } from "lucide-react";
+import { APP_URL } from "@/lib/site";
 
 declare global {
   interface Window {
@@ -18,14 +19,14 @@ export default function PricingSection() {
   const yearlyPrice = 29.99;
   const yearlySavings = 37; // vs 12 months at monthly
 
-  const handleFreeInstall = () => {
-    window.umami?.track("install");
-    window.location.href = "/download";
+  const handleTryFree = () => {
+    window.umami?.track("cta_try_free");
+    window.location.href = APP_URL;
   };
 
   const handleUpgrade = () => {
     window.umami?.track("upgrade_click");
-    window.location.href = "/download#pricing";
+    window.location.href = "/billing";
   };
 
   return (
@@ -98,10 +99,10 @@ export default function PricingSection() {
             </ul>
             <button
               type="button"
-              onClick={handleFreeInstall}
+              onClick={handleTryFree}
               className="mt-8 w-full py-4 sm:py-5 rounded-xl sm:rounded-2xl text-base sm:text-lg font-semibold border border-[var(--border-primary)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors cursor-pointer"
             >
-              Add to Chrome — Free
+              Try free
             </button>
           </div>
 
