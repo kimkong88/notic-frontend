@@ -48,7 +48,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">3. Free and Pro Plans</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Free (Personal):</strong> Unlimited notes in the browser, markdown, folders, and images. Up to 10 notes can be synced across devices when you sign in. Export to .md is included.</li>
+                <li><strong>Free (Personal):</strong> 2 floating windows, unlimited notes in the browser, markdown, folders, and images. Up to 10 notes can be synced across devices when you sign in. Export to .md is included.</li>
                 <li><strong>Pro:</strong> Unlimited synced notes across devices, plus priority support. Available as a monthly subscription ($3.99/month) or yearly subscription ($29.99/year). Billing is processed through Lemon Squeezy.</li>
               </ul>
             </section>

@@ -171,7 +171,7 @@ export default function BillingContent({
   const freeIncludes = [
     "Unlimited notes and folders locally",
     "Sync up to 10 notes to the cloud (then sync pauses)",
-    "1 tab in the editor",
+    "2 tabs in the editor",
   ];
   const proIncludes = [
     "Unlimited cloud sync",

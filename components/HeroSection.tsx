@@ -30,11 +30,8 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.1 }}
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-[var(--text-primary)] mb-10 sm:mb-12 md:mb-14 tracking-tighter leading-[0.95]"
                 >
-                    A note that floats
-                    <br />
-                    <span className="gradient-text">
-                        on top of your browser.
-                    </span>
+                    Keep your notes in
+                    <span className="gradient-text">sight</span>
                 </motion.h1>
 
                 <motion.p

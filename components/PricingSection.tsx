@@ -40,7 +40,7 @@ export default function PricingSection() {
             Simple pricing
           </h2>
           <p className="text-[var(--text-muted)] text-base sm:text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
-            One window free. Upgrade for unlimited windows and sync.
+            Two windows free. Upgrade for unlimited windows and sync.
           </p>
 
           <div className="inline-flex items-center gap-1 p-1 mt-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] rounded-full">
@@ -83,7 +83,7 @@ export default function PricingSection() {
             </h3>
             <ul className="space-y-3 sm:space-y-4 flex-grow text-sm sm:text-base md:text-lg text-[var(--text-secondary)]">
               {[
-                "One floating window",
+                "Two floating windows",
                 "Unlimited notes in browser",
                 "Markdown, folders, images",
                 "Works offline",

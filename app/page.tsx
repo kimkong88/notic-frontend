@@ -237,7 +237,7 @@ export default function Page() {
 
               <div className="card p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl border-2 border-[var(--accent)]/20">
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed text-left sm:text-center font-semibold text-[var(--text-primary)]">
-                  One floating window over every tab. Your notes, <span className="text-[var(--accent)]">your format</span>, your data—take them anywhere.
+                  Floating windows over every tab. Your notes, <span className="text-[var(--accent)]">your format</span>, your data—take them anywhere.
                 </p>
               </div>
             </div>
