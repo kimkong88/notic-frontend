@@ -40,8 +40,9 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-[var(--text-muted)] text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mb-12 sm:mb-16 md:mb-20 leading-relaxed font-medium px-0"
                 >
-                    Not another tab, but a separate window that stays visible
-                    while you switch tabs. Capture ideas and clip content.
+                    A floating window that doesn't hide when you switch tabs.
+                    Perfect for saving snippets and capturing ideas without
+                    losing your flow.
                 </motion.p>
 
                 <motion.div
