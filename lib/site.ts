@@ -1,5 +1,5 @@
 /**
- * Shared URLs for CTAs: cloud app (primary) and Chrome extension (secondary).
+ * Shared URLs for CTAs (e.g. cloud app).
  * Set NEXT_PUBLIC_APP_URL to your web app (e.g. https://app.getnotic.io).
  */
 export const APP_URL =

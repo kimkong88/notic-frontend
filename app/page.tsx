@@ -238,7 +238,7 @@ export default function Page() {
                                             Notic_Export.zip
                                         </span>
                                         <span className="text-[var(--text-muted)] text-xs">
-                                            Export anytime from the extension
+                                            Export anytime from the app
                                         </span>
                                     </div>
                                 </div>
@@ -293,8 +293,8 @@ export default function Page() {
                             <div className="card p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl">
                                 <p className="text-base sm:text-lg md:text-xl leading-relaxed text-left sm:text-center">
                                     You shouldn’t need an account just to
-                                    capture a thought. Install the extension,
-                                    start writing.{" "}
+                                    capture a thought. Open Notic in your
+                                    browser, start writing.{" "}
                                     <span className="text-[var(--accent)] font-semibold">
                                         No email, no credit card.
                                     </span>

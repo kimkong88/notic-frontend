@@ -52,14 +52,13 @@ export default function TermsOfService() {
                                 2. Description of Service
                             </h2>
                             <p>
-                                Notic is a Chrome extension that provides a
-                                floating note-taking experience over your
-                                browser tabs. Notes are stored locally in your
-                                browser (Chrome storage). Optional features
-                                include: syncing notes across devices when you
-                                sign in with Google, exporting notes as .md
-                                files, integrations (e.g. Notion, Obsidian), and
-                                publishing or sharing notes. The extension works
+                                Notic is a floating note-taking app that works
+                                over your browser. Notes are stored locally in
+                                your browser. Optional features include: syncing
+                                notes across devices when you sign in with
+                                Google, exporting notes as .md files,
+                                integrations (e.g. Notion, Obsidian), and
+                                publishing or sharing notes. The app works
                                 offline for note-taking; sync and image upload
                                 require an internet connection.
                             </p>
@@ -141,7 +140,7 @@ export default function TermsOfService() {
                                 </li>
                                 <li>
                                     Reverse engineer, decompile, or disassemble
-                                    the extension
+                                    the Service
                                 </li>
                                 <li>
                                     Attempt to bypass or circumvent any security
@@ -231,10 +230,10 @@ export default function TermsOfService() {
                                 Pro features) immediately, without prior notice,
                                 for any breach of these Terms or for any other
                                 reason we deem necessary. Upon termination, your
-                                data in the extension remains in your browser;
-                                you may export it. Data stored on our servers
-                                for sync may be deleted in accordance with our
-                                data retention practices.
+                                data in the app remains in your browser; you may
+                                export it. Data stored on our servers for sync
+                                may be deleted in accordance with our data
+                                retention practices.
                             </p>
                         </section>
 
