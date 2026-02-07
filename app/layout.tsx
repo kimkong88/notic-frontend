@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Plus_Jakarta_Sans, Maven_Pro } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
@@ -18,6 +18,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
     variable: "--font-plus-jakarta-sans",
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
+});
+
+const mavenPro = Maven_Pro({
+    variable: "--font-maven-pro",
+    subsets: ["latin"],
+    weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -96,7 +102,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${mavenPro.variable} antialiased`}
             >
                 <StructuredData />
                 {children}

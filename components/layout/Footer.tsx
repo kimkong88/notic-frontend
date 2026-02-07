@@ -13,8 +13,8 @@ export default function Footer() {
                         className="flex items-center gap-2 text-[var(--text-primary)] hover:opacity-80 transition-opacity"
                     >
                         <Logo compact size={16} containerClassName="w-7 h-7" />
-                        <span className="text-lg font-semibold tracking-tight">
-                            Notic
+                        <span className="text-lg font-bold tracking-tight font-[family-name:var(--font-maven-pro)]">
+                            notic
                         </span>
                     </Link>
                     <p className="text-center md:text-left text-sm text-[var(--text-muted)]">
