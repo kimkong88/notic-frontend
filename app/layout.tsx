@@ -109,7 +109,7 @@ export default function RootLayout({
                     process.env.NEXT_PUBLIC_CLARITY_ID && (
                         <Script
                             id="microsoft-clarity"
-                            strategy="afterInteractive"
+                            strategy="lazyOnload"
                         >{`
                             (function(c,l,a,r,i,t,y){
                                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
