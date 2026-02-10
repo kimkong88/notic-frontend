@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Logo from "../Logo";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { APP_URL } from "@/lib/site";
+import { APP_URL, DOWNLOAD_URL } from "@/lib/site";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -43,12 +43,12 @@ export default function Header() {
                     >
                         Features
                     </a>
-                    <a
-                        href="#features"
+                    <Link
+                        href={DOWNLOAD_URL}
                         className="hover:text-[var(--text-primary)] transition-colors"
                     >
-                        Features
-                    </a>
+                        Download
+                    </Link>
                     <a
                         href="#pricing"
                         className="hover:text-[var(--text-primary)] transition-colors"
@@ -97,13 +97,13 @@ export default function Header() {
                             >
                                 Features
                             </a>
-                            <a
-                                href="#features"
+                            <Link
+                                href={DOWNLOAD_URL}
                                 onClick={() => setMobileOpen(false)}
                                 className="hover:text-[var(--text-primary)] transition-colors"
                             >
-                                Features
-                            </a>
+                                Download
+                            </Link>
                             <a
                                 href="#pricing"
                                 onClick={() => setMobileOpen(false)}

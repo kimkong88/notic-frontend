@@ -31,6 +31,12 @@ export default function Footer() {
                             Blog <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                         <Link
+                            href="/download"
+                            className="hover:text-[var(--text-primary)] transition-colors"
+                        >
+                            Download
+                        </Link>
+                        <Link
                             href="/privacy"
                             className="hover:text-[var(--text-primary)] transition-colors"
                         >
